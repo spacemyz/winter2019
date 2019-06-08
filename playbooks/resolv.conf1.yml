@@ -1,0 +1,11 @@
+---
+- name: resolv.conf managing
+  hosts: all
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: changing resolv.conf
+    template:
+      src: /ansible/templates/nameserver.conf
+      dest: /etc/resolv.conf  
